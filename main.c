@@ -4,14 +4,16 @@
 #define MAX_PATIENTS 100
 #define MAX_SLOTS 5
 
-// Patient structure
 struct Patient {
     char name[50];
     int age;
     char gender;
     int id;
-    int reservedSlot; // 0 if not reserved, otherwise the reserved slot index
+    int reservedSlot;
 };
+
+struct Patient patients[MAX_PATIENTS];
+int reservedSlots[MAX_SLOTS];
 
 // Function prototypes
 void adminMode();
@@ -25,10 +27,6 @@ void viewPatientRecord();
 void viewTodayReservations();
 void printAvailableSlots();
 void initializeSlots();
-
-// Global variables
-struct Patient patients[MAX_PATIENTS];
-int reservedSlots[MAX_SLOTS];
 
 int main() {
     initializeSlots();
